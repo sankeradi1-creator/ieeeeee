@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #030712;
+    --bg-secondary: #060B1B;
+    --bg-card: rgba(10, 17, 40, 0.7);
+    --border-glow: rgba(0, 242, 254, 0.2);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: #e2e8f0;
+    overflow-x: hidden;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 242, 254, 0.15);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0284c7;
+  }
+}
+
+@layer utilities {
+  /* Tech Grid Background */
+  .tech-grid-bg {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  .tech-dots-bg {
+    background-image: radial-gradient(rgba(0, 242, 254, 0.15) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Glassmorphism Classes */
+  .glass-card {
+    background: rgba(10, 17, 40, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgba(0, 242, 254, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(0, 242, 254, 0.2), inset 0 0 15px rgba(0, 242, 254, 0.05);
+    transform: translateY(-4px);
+  }
+
+  .glass-panel {
+    background: rgba(6, 11, 27, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 242, 254, 0.15);
+  }
+
+  /* Text Gradients */
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #00f2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #00f2fe 0%, #818cf8 50%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glowing borders & lines */
+  .glow-border-cyan {
+    box-shadow: 0 0 15px -3px rgba(0, 242, 254, 0.3);
+  }
+
+  .glow-border-purple {
+    box-shadow: 0 0 15px -3px rgba(168, 85, 247, 0.3);
+  }
+}
+
+/* Scanline / CRT Cyber Effect (subtle) */
+.scanline-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 242, 254, 0.02) 50%,
+    rgba(0, 242, 254, 0.02)
+  );
+  background-size: 100% 4px;
+}
